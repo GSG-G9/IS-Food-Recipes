@@ -1,11 +1,15 @@
 .App {
   text-align: center;
-  background-image: url('./images/background.jpg');
+  background-image: url('./images/background.jpg'), url('./images/backgroung2.jpg');
+  background-repeat: repeat;
+  background-size: 100vw 100vh,100vw 100vh;
+  background-position: 0 0 , bottom;
   height: 100vh;
 }
 
 .navbar{
   position: fixed;
+  
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -47,7 +51,37 @@ line-height: 64px;
 }
 .background_image{
   
-  max-height: 100%;
+  background-image: url('./images/background.jpg');
+  background-size: 100vw 100vh;
+  background-position: 0 90px;
+  height: 100vh;
+}
+
+.home-recipes-container{
+  position: absolute;
+  top: 390px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.home-recipes-img-container{
+  width: 200px;
+  height: 200px;
+ 
+}
+.home-recipes-img{
+  max-width: 100%;
+  
+}
+.item{
+  width: 15%;
+  color: #D6CDC7;
+  margin-left: 50px;
+  margin-top: 60px;
+  font-size: 1.3em;
+}
+ul {
+  list-style-type: none;
 }
 @keyframes App-logo-spin {
   from {

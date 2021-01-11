@@ -6,18 +6,24 @@ import background from './images/background.jpg'
  const Home = (props) =>{
 
   return(
-    <div>
+    
       <div >
-        {/* <img class="background_image" src={background} alt="background image"></img> */}
-            <ul>
-        {props.categories.map(item=>(
-          <li key={item.idCategory}>{item.strCategory}
-          </li>
-        ))}
-      </ul>
+        <ul className="home-page-container">
+          <div className="home-recipes-container">
+         {props.categories.map(item=>(
+           <li className="item" key={item.idCategory}>
+            
+             <div className="home-recipes-img-container">
+               <img className="home-recipes-img" src={item.strCategoryThumb}></img>
+             <p>{item.strCategory}</p>
+            </div>
+            
+           </li>
+         ))}</div>
+        </ul>
       </div>
    
-    </div>
+    
    )
   }
 class App extends React.Component {
