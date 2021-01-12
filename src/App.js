@@ -1,31 +1,10 @@
 import React from 'react';
 import { Route, Link, Redirect, Switch } from 'react-router-dom';
 import './App.css';
-import background from './images/background.jpg'
+import Home from './components/Home';
+import Search from './components/Search'
 
- const Home = (props) =>{
 
-  return(
-    
-      <div >
-        <ul className="home-page-container">
-          <div className="home-recipes-container">
-         {props.categories.map(item=>(
-           <li className="item" key={item.idCategory}>
-            
-             <div className="home-recipes-img-container">
-               <img className="home-recipes-img" src={item.strCategoryThumb}></img>
-             <p>{item.strCategory}</p>
-            </div>
-            
-           </li>
-         ))}</div>
-        </ul>
-      </div>
-   
-    
-   )
-  }
 class App extends React.Component {
 
   
@@ -34,18 +13,18 @@ class App extends React.Component {
     category:[],
 
   }
-  componentDidMount(){
-    const url = "https://www.themealdb.com/api/json/v1/1/categories.php";
-    fetch(url)
-    .then(res=>res.json())
-    .then((result)=>{
-      this.setState({
-        category:result.categories,
-        isLoaded: true,
-      })
-    })
+  // componentDidMount(){
+  //   const url = "https://www.themealdb.com/api/json/v1/1/categories.php";
+  //   fetch(url)
+  //   .then(res=>res.json())
+  //   .then((result)=>{
+  //     this.setState({
+  //       category:result.categories,
+  //       isLoaded: true,
+  //     })
+  //   })
     
-  }
+  // }
 
   render() {
   
@@ -69,8 +48,12 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" render={
             (props)=> <Home categories={category} {...props}/>
-
           }/>
+          <Route path="/search" component={Search}
+          // render={
+          //   (props)=> <Search {...props}/>
+          // }
+          />
           {/* <Route path="/about" component={About}/> */}
         </Switch>
       </div>

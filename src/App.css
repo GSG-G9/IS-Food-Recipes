@@ -73,12 +73,38 @@ line-height: 64px;
   max-width: 100%;
   
 }
+.form-container{
+  
+  width: 50%;
+  position: absolute;
+  top:200px;
+  left: 50%;
+}
+.search-input{
+  height: 50px;
+  width: 300px;
+}
 .item{
   width: 15%;
   color: #D6CDC7;
   margin-left: 50px;
   margin-top: 60px;
   font-size: 1.3em;
+}
+.no-result{
+  position: absolute;
+  top : 300px;
+  left: 35%;
+  color: #D6CDC7;
+  text-align: center;
+  margin: auto;
+
+}
+.search-recipes-img-container{
+  width: 150px;
+  height: 150px;
+  margin-left: 50px;
+
 }
 ul {
   list-style-type: none;
