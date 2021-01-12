@@ -1,15 +1,37 @@
+
 .App {
   text-align: center;
-  background-image: url('./images/background.jpg'), url('./images/backgroung2.jpg');
-  background-repeat: repeat;
-  background-size: 100vw 100vh,100vw 100vh;
-  background-position: 0 0 , bottom;
+  background-image: url('./images/backgroung2.jpg');
+  object-fit: cover;
+  background-size: 100vh 100%;
+  background-position: left 0 top 100vh;
+  background-repeat: repeat-y; 
   height: 100vh;
+  width: 100vw;
+  
+  
+}
+
+
+.background-img{
+  
+  width: 100%;
+ height: 100vh;
+}
+
+.background-img-con{ 
+
+  background-image: url('./images/backgroung2.jpg');
+  background-size: 100vw 100%;
+  background-position: left 0 bottom 0;
+  width:100vw;
+  height: 100vh;
+  
 }
 
 .navbar{
   position: fixed;
-  
+  top: 0;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -63,6 +85,18 @@ line-height: 64px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  
+  
+}
+.recipes-container{
+  position: absolute;
+  top: 320px;
+  display: grid;
+  grid-template-columns: repeat(5, 15%);
+  grid-gap :100px; 
+  
+  width: 60%;
+
 }
 .home-recipes-img-container{
   width: 200px;
@@ -88,7 +122,7 @@ line-height: 64px;
   width: 15%;
   color: #D6CDC7;
   margin-left: 50px;
-  margin-top: 60px;
+
   font-size: 1.3em;
 }
 .no-result{

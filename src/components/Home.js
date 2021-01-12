@@ -1,5 +1,6 @@
 import React from 'react';
 import categoriesArray from '../categoriesArray';
+import { Route, Link, Redirect, Switch } from 'react-router-dom';
 
 class Home extends React.Component {
   state = {
@@ -34,7 +35,7 @@ class Home extends React.Component {
   render() {
     console.log("histoory",this.props.history)
     return (
-      <div>
+      <div className="homeee">
         <form className="form-container" onSubmit={this.handleSubmit}>
           <input
             className="search-input"
@@ -46,16 +47,18 @@ class Home extends React.Component {
         </form>
 
         <ul className="home-page-container">
-          <div className="home-recipes-container">
+          <div className="recipes-container">
             {categoriesArray.map((item) => (
               <li className="item" key={item.idCategory}>
-                <div className="home-recipes-img-container">
-                  <img
-                    className="home-recipes-img"
-                    src={item.strCategoryThumb}
-                  />
-                  <p>{item.strCategory}</p>
-                </div>
+                <Link  to={`/categories/${item.strCategory}`}>
+                  <div className="home-recipes-img-container">
+                    <img
+                      className="home-recipes-img"
+                      src={item.strCategoryThumb}
+                    />
+                    <p>{item.strCategory}</p>
+                  </div>
+                </Link>
               </li>
             ))}
           </div>
