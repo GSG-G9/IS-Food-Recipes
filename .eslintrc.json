@@ -29,6 +29,8 @@
             "error",{
                 "singleQuote":true
             }
-        ]
+        ],
+        "react/state-in-constructor": [0, "never"]
+    
     }
 }
