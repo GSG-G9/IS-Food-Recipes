@@ -94,8 +94,8 @@ class RecipeDetails extends React.Component {
 }
 }
 RecipeDetails.PropTypes = {
-  isLoaded: PropTypes.bool,
-  RecipeInformation:PropTypes.array
+  history: PropTypes.shape({goBack:PropTypes.func.isRequired}).isRequired,
+  match :PropTypes.shape({params:PropTypes.shape({recipeId:PropTypes.string.isRequired})})
 
 }
 export default RecipeDetails;
