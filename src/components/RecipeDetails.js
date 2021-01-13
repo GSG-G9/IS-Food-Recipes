@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 import '../recipeDetails.css'
 
 
@@ -60,7 +61,7 @@ class RecipeDetails extends React.Component {
                         
                        (item.includes("strIngredient")&& RecipeInformation[0][item])?
                          
-                        <li className="iingredient-item" key={item}>
+                        <li className="ingredient-item" key={item}>
                         <div >
                         <Link className="ingredient-name"  to={`/ingredientMeals/${RecipeInformation[0][item]}`}>
                           <img
@@ -87,5 +88,9 @@ class RecipeDetails extends React.Component {
     }
 }
 }
+RecipeDetails.PropTypes = {
+  isLoaded: PropTypes.bool,
+  RecipeInformation:PropTypes.array
 
+}
 export default RecipeDetails;

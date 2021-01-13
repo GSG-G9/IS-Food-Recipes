@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types';
+import '../recipeDetails.css'
 
 class IngredientMeals extends React.Component {
     state = {
@@ -33,34 +35,41 @@ class IngredientMeals extends React.Component {
         }
         else{
         return (
-            <div>
-            <p>{ingredientName}</p>
+            <div className="recipe-cont">
+              <div className="first-section">
+            <p className="recipe-title">{ingredientName}</p>
             <img
-            className="home-recipes-img"
+              className="recipe-img"
             src={`https://www.themealdb.com/images/ingredients/${ingredientName}.png`}
           />
+          </div>
+          <div className="second-section">
+            <ul className="ingredient-list1">
           
-            <ul className="home-page-container">
-            <div className="home-recipes-container">
               {allMeals.map((item) => (
-                <li className="item" key={item.idMeal}>
-                  <div className="search-recipes-img-container">
-                    <Link className="link-name" to={`/recipeDetails/${item.idMeal}`}>
+                <li  className="ingredient-item1" key={item.idMeal}>
+                  <div >
+                    <Link className="ingredient-name" to={`/recipeDetails/${item.idMeal}`}>
                     <img
-                      className="home-recipes-img"
+                    className="ingredient-item"
                       src={item.strMealThumb}
                     />
-                    <p>{item.strMeal}</p>
+                    <p className="ingredient-name">{item.strMeal}</p>
                     </Link>
                   </div>
                 </li>
               ))}
-            </div>
+           
           </ul>
+          </div>
           </div>
          )
         }
 }
 }
+IngredientMeals.PropTypes = {
+  isLoaded: PropTypes.bool,
+  allMeals:PropTypes.array
 
+}
 export default IngredientMeals;

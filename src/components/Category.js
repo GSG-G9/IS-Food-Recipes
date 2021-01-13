@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import search from '../images/search.png';
 
@@ -106,5 +107,11 @@ class Category extends React.Component {
       }
     }
 }
+Category.PropTypes = {
+  isLoaded: PropTypes.bool,
+  categoryResult:PropTypes.array,
+  trackScrolling:PropTypes.bool,
+  searchedRecipe : PropTypes.string,
 
+}
 export default Category;
