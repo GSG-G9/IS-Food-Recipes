@@ -25,55 +25,29 @@ class Search extends React.Component {
   }
 
   
-  handleChange = (event) => {
-    this.setState({searchedRecipe : event.target.value})
-    console.log(this.state)
-  }
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const {searchedRecipe} = this.state;
-    this.props.history.push(`/search?q=${searchedRecipe}`)
-  }
+ 
   
   render(){
+    const searchedRecipe = this.props.location.search.split('=')[1];
     const {searchResult, isLoaded} = this.state;
     if(isLoaded){
-      return <h1>loading ...</h1>
+      return(
+        <div className="loading-img">
+      </div> 
+      )
     } 
   
     else {
       if(!searchResult){
         return (
           <div>
-             <form className="form-container" onSubmit={this.handleSubmit}>
-             <input
-               className="search-input"
-               type="text"
-               placeholder="Search for a recipe"
-               onChange={this.handleChange}
-             />
-             <button className="search-button" type="submit">
-               <img className="search-img" alt="search" src={search}></img>
-             </button>
-           </form>
              <h1 className="no-result">There is no recipes for the entered search </h1>
           </div>
         )
       } else{
           return (
             <div>
-              <form className="form-container" onSubmit={this.handleSubmit}>
-                <input
-                  className="search-input"
-                  type="text"
-                  placeholder="Search for a recipe"
-                  onChange={this.handleChange}
-                />
-                <button className="search-button" type="submit">
-                  <img className="search-img" alt="search" src={search}></img>
-                </button>
-              </form>
+              <h1 className="category-heading">Search Results for '{searchedRecipe}' Recipes</h1>
               <ul className="home-page-container">
                 <div className="home-recipes-container">
                   {searchResult.map((item) => (
