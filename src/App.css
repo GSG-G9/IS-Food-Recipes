@@ -43,7 +43,7 @@ body{
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #000000;
+  background-color: #3b3b3b;
   width:100%;
   
 }
@@ -95,9 +95,10 @@ line-height: 45px;
 }
 
 .home-recipes-container{
-
+  width:60vw;
   position: absolute;
   top: 350px;
+  left:20vw;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -169,7 +170,16 @@ line-height: 45px;
   color: #D6CDC7;
 
 }
-
+.failed{
+  position: absolute;
+  top: 20%;
+  left: 65vw;
+  color: rgb(163, 27, 27);
+}
+.link-name{
+  color:  #D6CDC7;
+  text-decoration: none;
+}
 .welcoming-heading{
   position: absolute;
   top: 23%;
@@ -179,7 +189,7 @@ line-height: 45px;
 }
 
 .item{
-  width: 12%;
+  width: 18%;
   color: #D6CDC7;
   margin-left: 20px;
   margin-top: 120px;
