@@ -51,9 +51,7 @@ body{
   color: #D6CDC7;
   font-weight: bold;
 font-size: 20px;
-<<<<<<< HEAD
 line-height: 35px;
-=======
 line-height: 30px;
 text-decoration: none;
 margin-right: 20px;
@@ -61,7 +59,6 @@ margin-right: 20px;
 .nav_item :hover{
   color: #8b8481;
 
->>>>>>> main
 }
 .nav_item{
   float: right;
