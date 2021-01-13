@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Link, Redirect, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './App.css';
 import Home from './components/Home';
 import Search from './components/Search';
@@ -90,5 +91,12 @@ class App extends React.Component {
       
     );
   }
+}
+
+App.PropTypes = {
+  isLoaded: PropTypes.bool,
+  category:PropTypes.array,
+  trackScrolling:PropTypes.bool
+
 }
 export default App;

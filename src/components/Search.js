@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types';
 import search from '../images/search.png';
 
 class Search extends React.Component {
@@ -72,5 +73,9 @@ class Search extends React.Component {
     }
   }
 }
+Search.PropTypes = {
+  isLoaded: PropTypes.bool,
+  searchResult:PropTypes.array
 
+}
 export default Search;
