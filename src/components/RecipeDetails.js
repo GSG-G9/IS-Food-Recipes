@@ -21,10 +21,10 @@ class RecipeDetails extends React.Component {
         })
         .then((res)=>console.log("hiiiiiiii",res.RecipeInformation))
       }
-    //   back=()=>{
-    //       console.log("Hiiii",this.props.history)
-    //       this.props.history.goBack
-    //   }
+      back=()=>{
+          console.log("Hiiii",this.props.history)
+          this.props.history.goBack()
+      }
 
     render(){
        
@@ -54,7 +54,7 @@ class RecipeDetails extends React.Component {
                          
                         <li className="item" key={item}>
                         <div className="home-recipes-img-container">
-                        <Link to={`/ingredientMeals/${RecipeInformation[0][item]}`}>
+                        <Link className="link-name" to={`/ingredientMeals/${RecipeInformation[0][item]}`}>
                           <img
                             className="home-recipes-img"
                             src={`https://www.themealdb.com/images/ingredients/${RecipeInformation[0][item]}.png`}
@@ -70,7 +70,7 @@ class RecipeDetails extends React.Component {
                   }
                   </div>  
                   </ul>
-                  {/* <button onClick={this.back()}>Back to Recipes</button> */}
+                  <button onClick={this.back}>Back to Recipes</button>
                   </div> 
           
         )

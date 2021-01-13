@@ -4,9 +4,11 @@ import './App.css';
 import Home from './components/Home';
 import Search from './components/Search';
 import RecipeDetails from './components/RecipeDetails'
-// import IngredientMeals from './components/IngredientMeals'
+import IngredientMeals from './components/IngredientMeals'
 import Category from './components/Category';
-import background from './images/background.jpg'
+import background from './images/background.jpg';
+import About from './components/About';
+import NotFound from './components/NotFound';
 
 
 
@@ -40,22 +42,11 @@ class App extends React.Component {
   // }
 
   render() {
-  //   $(document).ready(function() {
-  //     // Check if body height is higher than window height :)
-  //     if ($("body").height() > $(window).height()) {
-  //         alert("Vertical Scrollbar! D:");
-  //     }
-  
-  //     // Check if body width is higher than window width :)
-  
-  // });
-  var hasVScroll = document.body.scrollHeight > document.body.clientHeight;
-  
-    const {isLoaded, category} = this.state;
 
+    const {isLoaded, category} = this.state;
+    
     return (
-      
-      <body className="App">
+      <div className="App">
          <div className="background-img-con">
           <img  className="background-img" src={background}></img>
         </div>
@@ -81,25 +72,21 @@ class App extends React.Component {
           </li>
         </ul>
         <Switch>
-          
           <Route exact path="/" render={
             (props)=> <Home categories={category} {...props}/>
           }/>
-         
-          <Route path="/search" component={Search}
-          // render={
-          //   (props)=> <Search {...props}/>
-          // }
-          />
+          <Route path="/search" component={Search}/>
           <Route path="/categories/:category" component={Category}/>
-          {/* <Route path="/about" component={About}/> */}
-          <Route path="/recipeDetails/:recipeId" 
-          render={(props) => <RecipeDetails {...props} />}/>
-
-          {/* <Route path="/ingredientMeals/:ingredientName" 
-          render={(props) => <IngredientMeals {...props} />}/> */}
+          <Route path="/about" component={About}/>
+          <Route path="/recipeDetails/:recipeId" render={
+            (props) => <RecipeDetails {...props} />}
+          />
+          <Route path="/ingredientMeals/:ingredientName" render={
+            (props) => <IngredientMeals {...props} />}
+          />
+          <Route component={NotFound}/>
         </Switch>
-      </body>
+      </div>
       
     );
   }

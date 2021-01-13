@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import search from '../images/search.png';
 
 
 class Category extends React.Component {
@@ -52,7 +54,7 @@ class Category extends React.Component {
     }
     
     render(){
-    
+      const {category} = this.props.match.params;
       const {categoryResult, isLoaded} = this.state;
       if(isLoaded){
         return <h1>loading ...</h1>
@@ -65,34 +67,36 @@ class Category extends React.Component {
           
             return (
               <div>
-                 {/* <div className="background-img-con">
-              <img  className="background-img" src={background}></img>
-            </div> */}
-            <form className="form-container" onSubmit={this.handleSubmit}>
-          <input
-            className="search-input"
-            type="text"
-            placeholder="Search for a recipe"
-            onChange={this.handleChange}
-          />
-          <button type="submit">Search</button>
-        </form>
-             <ul className="home-page-container">
-             <div className="home-recipes-container">
-               {categoryResult.map((item) => (
-                 <li className="item" key={item.idMeal}>
-                   <div className="search-recipes-img-container">
-                     <img
-                       className="home-recipes-img"
-                       src={item.strMealThumb}
-                     />
-                     <p>{item.strMeal}</p>
-                   </div>
-                 </li>
-               ))}
+                <form className="form-container" onSubmit={this.handleSubmit}>
+                  <input
+                    className="search-input"
+                    type="text"
+                    placeholder="Search for a recipe"
+                    onChange={this.handleChange}
+                  />
+                  <button className="search-button" type="submit">
+                    <img className="search-img" alt="search" src={search}></img>
+                  </button>
+                </form>
+                <h1 className="category-heading">{category}</h1>
+                <ul className="home-page-container">
+                  <div className="home-recipes-container">
+                    {categoryResult.map((item) => (
+                      <li className="item" key={item.idMeal}>
+                        <div className="search-recipes-img-container">
+                          <Link className="link-name" to={`/recipeDetails/${item.idMeal}`}>
+                            <img
+                              className="home-recipes-img"
+                              src={item.strMealThumb}
+                            />
+                            <p>{item.strMeal}</p>
+                          </Link>
+                        </div>
+                      </li>
+                    ))}
+                  </div>
+                </ul>
              </div>
-           </ul>
-           </div>
           )
          }
       
