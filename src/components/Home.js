@@ -48,7 +48,7 @@ class Home extends React.Component {
                       className="home-recipes-img"
                       src={item.strCategoryThumb}
                     />
-                    <p className="category-name">{item.strCategory}</p>
+                    <p className="category-name" >{item.strCategory}</p>
                   </div>
                 </Link>
               </li>
