@@ -31,10 +31,6 @@ class Search extends React.Component {
     )
   } 
      
-
-  
- 
-  
   render(){
     const searchedRecipe = this.props.location.search.split('=')[1];
     const {searchResult, isLoaded, error} = this.state;

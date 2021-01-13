@@ -32,6 +32,8 @@ class IngredientMeals extends React.Component {
     render(){
         const {allMeals, isLoaded, error} = this.state;
         const {ingredientName}=this.props.match.params;
+        const {goBack} = this.props.history;
+        
         if(error){
           return <h1 className="failed">{error.message}</h1>
         }
@@ -45,6 +47,7 @@ class IngredientMeals extends React.Component {
         return (
             <div className="recipe-cont">
               <div className="first-section">
+              <button className="back-btn" onClick={()=>goBack()}>Back to Recipes</button>
             <p className="recipe-title">{ingredientName}</p>
             <img
               className="recipe-img"
@@ -76,6 +79,7 @@ class IngredientMeals extends React.Component {
 }
 }
 IngredientMeals.PropTypes = {
+  history: PropTypes.shape({goBack:PropTypes.func.isRequired}).isRequired,
   match :PropTypes.shape({params:PropTypes.shape({ingredientName:PropTypes.string.isRequired})})
 
 }

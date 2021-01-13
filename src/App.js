@@ -12,53 +12,21 @@ import About from './components/About';
 import NotFound from './components/NotFound';
 
 
-
-
 class App extends React.Component {
 
-  
-  state={
-    isLoaded:false,
+  state = {
     category:[],
-    trackScrolling:false
-
   }
-  // componentDidMount(){
-  //   const url = "https://www.themealdb.com/api/json/v1/1/categories.php";
-  //   fetch(url)
-  //   .then(res=>res.json())
-  //   .then((result)=>{
-  //     this.setState({
-  //       category:result.categories,
-  //       isLoaded: true,
-  //     })
-  //   })
-    
-  // }
-  // componentDidMount() {
-  //   document.addEventListener('scroll', this.trackScrolling);
-  // }
-  // trackScrolling = () =>{
-  //   this.setState({trackScrolling:true})
-  // }
 
   render() {
 
-    const {isLoaded, category} = this.state;
+    const {category} = this.state;
     
     return (
       <div className="App">
          <div className="background-img-con">
           <img  className="background-img" src={background}></img>
         </div>
-    
-        {/* { hasVScroll ? 
-        <div className="background-img-con">
-          <img  className="background-img" src={background2}></img>
-        </div>
-        : <h1>okkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</h1>
-        } */}
-        
         <ul className="navbar">
           <li className="nav_title">IS Food Recipes</li>
           <li className="nav_item">

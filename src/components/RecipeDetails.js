@@ -32,7 +32,7 @@ class RecipeDetails extends React.Component {
     }
 
     render(){
-            const {goBack} = this.props.history
+            const {goBack} = this.props.history;
             const {RecipeInformation, isLoaded, error} = this.state;
             if(error){
               return <h1 className="failed">{error.message}</h1>

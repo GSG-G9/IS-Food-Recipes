@@ -11,7 +11,7 @@ const About = () => {
         </h2>
       </div>
       <p>
-        We're fulfilling this mission by improving life in the kitchen for
+        We are fulfilling this mission by improving life in the kitchen for
         millions of home cooks around the world.
       </p>
       <p>
