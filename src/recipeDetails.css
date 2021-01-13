@@ -98,3 +98,19 @@
     color: #9FC12A ;
     text-decoration: underline;
 }
+
+.back-btn{
+    font-weight: bold;
+    font-size: 30px;
+    position: absolute;
+    top: -70px;
+    left:65vw;
+    width: 250px;
+    height: 70px;
+    background-color: #9FC12A;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+}

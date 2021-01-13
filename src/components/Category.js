@@ -58,7 +58,10 @@ class Category extends React.Component {
       const {category} = this.props.match.params;
       const {categoryResult, isLoaded} = this.state;
       if(isLoaded){
-        return <h1>loading ...</h1>
+        return(
+          <div className="loading-img">
+        </div> 
+        )
       }
     
       else {
@@ -79,7 +82,7 @@ class Category extends React.Component {
                     <img className="search-img" alt="search" src={search}></img>
                   </button>
                 </form>
-                <h1 className="category-heading">{category}</h1>
+                <h1 className="category-heading">{category} Recipes</h1>
                 <ul className="home-page-container">
                   <div className="home-recipes-container">
                     {categoryResult.map((item) => (
