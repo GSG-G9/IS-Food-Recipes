@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 class Search extends React.Component {
   state = {
@@ -59,5 +60,9 @@ class Search extends React.Component {
     }
   }
 }
+Search.PropTypes = {
+  isLoaded: PropTypes.bool,
+  searchResult:PropTypes.array
 
+}
 export default Search;

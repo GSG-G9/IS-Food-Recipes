@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 class Category extends React.Component {
 
@@ -99,5 +99,11 @@ class Category extends React.Component {
       }
     }
 }
+Category.PropTypes = {
+  isLoaded: PropTypes.bool,
+  categoryResult:PropTypes.array,
+  trackScrolling:PropTypes.bool,
+  searchedRecipe : PropTypes.string,
 
+}
 export default Category;

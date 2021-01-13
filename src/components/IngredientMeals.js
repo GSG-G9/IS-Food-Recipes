@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 class IngredientMeals extends React.Component {
     state = {
@@ -59,5 +60,9 @@ class IngredientMeals extends React.Component {
         }
 }
 }
+IngredientMeals.PropTypes = {
+  isLoaded: PropTypes.bool,
+  allMeals:PropTypes.array
 
+}
 export default IngredientMeals;

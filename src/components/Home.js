@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import categoriesArray from '../categoriesArray';
 import { Route, Link, Redirect, Switch } from 'react-router-dom';
 import search from '../images/search.png'
@@ -70,5 +71,7 @@ class Home extends React.Component {
     );
   }
 }
-
+Home.PropTypes = {
+  searchedRecipe: PropTypes.string
+}
 export default Home;
