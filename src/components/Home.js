@@ -35,6 +35,7 @@ class Home extends React.Component {
             <img className="search-img" alt="search" src={search}></img>
           </button>
         </form>
+        <h1 className="welcoming-heading">Looking for something to tickle your taste buds? Try out our flavorful recipes.</h1>
 
         <ul className="home-page-container">
           <div className="recipes-container">

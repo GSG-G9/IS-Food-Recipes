@@ -26,7 +26,10 @@ class IngredientMeals extends React.Component {
         const {ingredientName}=this.props.match.params;
        
         if(isLoaded){
-          return <h1>loading ...</h1>
+          return(
+            <div className="loading-img">
+          </div> 
+          )
         }
         else{
         return (

@@ -22,22 +22,27 @@ class RecipeDetails extends React.Component {
         })
         .then((res)=>console.log("hiiiiiiii",res.RecipeInformation))
       }
-      back=()=>{
-          console.log("Hiiii",this.props.history)
-          this.props.history.goBack()
-      }
+      // back=()=>{
+      //     console.log("Hiiii",this.props.history)
+      //     this.props.history.goBack()
+      // }
 
     render(){
-       
+            const {goBack} = this.props.history
             const {RecipeInformation, isLoaded} = this.state;
             if(isLoaded){
-              return <h1>loading ...</h1>
+              return(
+                <div className="loading-img">
+              </div> 
+              )
             }
             else{
         return(
         
             <div className="recipe-cont">
+              
               <div className="first-section">
+                  <button className="back-btn" onClick={()=>goBack()}>Back to Recipes</button>
                   <div className="recipe-title">{RecipeInformation[0].strMeal}</div>
                   <img
                      className="recipe-img"
@@ -73,8 +78,9 @@ class RecipeDetails extends React.Component {
                   }
                    
                   </ul>
+                 
                   </div>
-                  {/* <button onClick={this.back()}>Back to Recipes</button> */}
+                   
                   </div> 
           
         )
