@@ -108,10 +108,9 @@ class Category extends React.Component {
     }
 }
 Category.PropTypes = {
-  isLoaded: PropTypes.bool,
-  categoryResult:PropTypes.array,
-  trackScrolling:PropTypes.bool,
-  searchedRecipe : PropTypes.string,
-
+  history: PropTypes.shape({push:PropTypes.func.isRequired}).isRequired,
+  match :PropTypes.shape({params:PropTypes.shape({category:PropTypes.string.isRequired})})
 }
+
+
 export default Category;

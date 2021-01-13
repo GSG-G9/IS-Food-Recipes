@@ -68,8 +68,7 @@ class IngredientMeals extends React.Component {
 }
 }
 IngredientMeals.PropTypes = {
-  isLoaded: PropTypes.bool,
-  allMeals:PropTypes.array
+  match :PropTypes.shape({params:PropTypes.shape({ingredientName:PropTypes.string.isRequired})})
 
 }
 export default IngredientMeals;

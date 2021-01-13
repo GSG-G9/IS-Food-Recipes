@@ -74,8 +74,7 @@ class Search extends React.Component {
   }
 }
 Search.PropTypes = {
-  isLoaded: PropTypes.bool,
-  searchResult:PropTypes.array
+location:PropTypes.shape({search:PropTypes.string}).isRequired
 
 }
 export default Search;
