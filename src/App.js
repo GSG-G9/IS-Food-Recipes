@@ -2,7 +2,9 @@ import React from 'react';
 import { Route, Link, Redirect, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
-import Search from './components/Search'
+import Search from './components/Search';
+import RecipeDetails from './components/RecipeDetails'
+import IngredientMeals from './components/IngredientMeals'
 
 
 class App extends React.Component {
@@ -55,6 +57,11 @@ class App extends React.Component {
           // }
           />
           {/* <Route path="/about" component={About}/> */}
+          <Route path="/recipeDetails/:recipeId" 
+          render={(props) => <RecipeDetails {...props} />}/>
+
+          <Route path="/ingredientMeals/:ingredientName" 
+          render={(props) => <IngredientMeals {...props} />}/>
         </Switch>
       </div>
       
