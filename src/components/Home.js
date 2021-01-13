@@ -1,6 +1,7 @@
 import React from 'react';
 import categoriesArray from '../categoriesArray';
 import { Route, Link, Redirect, Switch } from 'react-router-dom';
+import search from '../images/search.png'
 
 class Home extends React.Component {
   state = {
@@ -43,20 +44,22 @@ class Home extends React.Component {
             placeholder="Search for a recipe"
             onChange={this.handleChange}
           />
-          <button type="submit">Search</button>
+          <button className="search-button" type="submit">
+            <img className="search-img" alt="search" src={search}></img>
+          </button>
         </form>
 
         <ul className="home-page-container">
           <div className="recipes-container">
             {categoriesArray.map((item) => (
-              <li className="item" key={item.idCategory}>
-                <Link  to={`/categories/${item.strCategory}`}>
+              <li className="home-item" key={item.idCategory}>
+                <Link className="category-name" to={`/categories/${item.strCategory}`}>
                   <div className="home-recipes-img-container">
                     <img
                       className="home-recipes-img"
                       src={item.strCategoryThumb}
                     />
-                    <p>{item.strCategory}</p>
+                    <p className="category-name">{item.strCategory}</p>
                   </div>
                 </Link>
               </li>

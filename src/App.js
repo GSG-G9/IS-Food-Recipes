@@ -7,7 +7,7 @@ import RecipeDetails from './components/RecipeDetails'
 import IngredientMeals from './components/IngredientMeals'
 import Category from './components/Category';
 import background from './images/background.jpg'
-import background2 from './images/backgroung2.jpg'
+
 
 
 
