@@ -1,11 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
+import search from '../images/search.png';
 
 class Search extends React.Component {
   state = {
   isLoaded : true,
   searchResult : [],
+  searchedRecipe : "",
   }
   
   componentDidMount(){
@@ -22,6 +25,18 @@ class Search extends React.Component {
     })
     .then((res)=>console.log(res.searchResult))
   }
+
+  
+  handleChange = (event) => {
+    this.setState({searchedRecipe : event.target.value})
+    console.log(this.state)
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const {searchedRecipe} = this.state;
+    this.props.history.push(`/search?q=${searchedRecipe}`)
+  }
   
   render(){
     const {searchResult, isLoaded} = this.state;
@@ -31,28 +46,53 @@ class Search extends React.Component {
   
     else {
       if(!searchResult){
-        return <h1 className="no-result">There is no recipes for the entered search </h1>
+        return (
+          <div>
+             <form className="form-container" onSubmit={this.handleSubmit}>
+             <input
+               className="search-input"
+               type="text"
+               placeholder="Search for a recipe"
+               onChange={this.handleChange}
+             />
+             <button className="search-button" type="submit">
+               <img className="search-img" alt="search" src={search}></img>
+             </button>
+           </form>
+             <h1 className="no-result">There is no recipes for the entered search </h1>
+          </div>
+        )
       } else{
           return (
             <div>
-             
-             <ul className="home-page-container">
-             <div className="home-recipes-container">
-               {searchResult.map((item) => (
-                 <li className="item" key={item.idMeal}>
-                   <div className="search-recipes-img-container">
-                   <Link to={`/recipeDetails/${item.idMeal}`}>
-                     <img
-                       className="home-recipes-img"
-                       src={item.strMealThumb}
-                     />
-                     <p>{item.strMeal}</p>
-                     </Link>
-                   </div>
-                 </li>
-               ))}
-             </div>
-           </ul>
+              <form className="form-container" onSubmit={this.handleSubmit}>
+                <input
+                  className="search-input"
+                  type="text"
+                  placeholder="Search for a recipe"
+                  onChange={this.handleChange}
+                />
+                <button className="search-button" type="submit">
+                  <img className="search-img" alt="search" src={search}></img>
+                </button>
+              </form>
+              <ul className="home-page-container">
+                <div className="home-recipes-container">
+                  {searchResult.map((item) => (
+                    <li className="item" key={item.idMeal}>
+                      <div className="search-recipes-img-container">
+                        <Link className="link-name" to={`/recipeDetails/${item.idMeal}`}>
+                          <img
+                            className="home-recipes-img"
+                            src={item.strMealThumb}
+                          />
+                          <p>{item.strMeal}</p>
+                        </Link>
+                      </div>
+                    </li>
+                  ))}
+                </div>
+            </ul>
          </div>
         )
        }

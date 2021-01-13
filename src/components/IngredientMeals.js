@@ -43,7 +43,7 @@ class IngredientMeals extends React.Component {
               {allMeals.map((item) => (
                 <li className="item" key={item.idMeal}>
                   <div className="search-recipes-img-container">
-                    <Link to={`/recipeDetails/${item.idMeal}`}>
+                    <Link className="link-name" to={`/recipeDetails/${item.idMeal}`}>
                     <img
                       className="home-recipes-img"
                       src={item.strMealThumb}
