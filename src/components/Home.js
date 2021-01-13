@@ -11,7 +11,6 @@ class Home extends React.Component {
   
   handleChange = (event) => {
     this.setState({searchedRecipe : event.target.value})
-    console.log(this.state)
   }
 
   handleSubmit = (event) => {
@@ -21,7 +20,6 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log("histoory",this.props.history)
     return (
       <div className="homeee">
         <form className="form-container" onSubmit={this.handleSubmit}>

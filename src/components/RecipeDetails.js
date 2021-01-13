@@ -22,10 +22,6 @@ class RecipeDetails extends React.Component {
         })
         .then((res)=>console.log("hiiiiiiii",res.RecipeInformation))
       }
-      // back=()=>{
-      //     console.log("Hiiii",this.props.history)
-      //     this.props.history.goBack()
-      // }
 
     render(){
             const {goBack} = this.props.history

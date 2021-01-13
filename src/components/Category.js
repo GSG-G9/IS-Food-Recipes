@@ -15,26 +15,12 @@ class Category extends React.Component {
 
     handleChange = (event) => {
       this.setState({searchedRecipe : event.target.value})
-      console.log(this.state)
     }
   
     handleSubmit = (event) => {
       event.preventDefault();
       const {searchedRecipe} = this.state;
-      // let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchedRecipe}`;
-      // fetch(url)
-      // .then((res) => res.json())
-      // .then((res) => {
-      //   this.setState({
-      //     searchResult : res,
-      //     isLoaded : false
-      //   })
-      // })
-     
-      
       this.props.history.push(`/search?q=${searchedRecipe}`)
-      
-      
     }
     componentDidMount(){
       const {category} = this.props.match.params;
