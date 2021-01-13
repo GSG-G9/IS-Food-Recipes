@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Signika', sans-serif;
 
 }
 body{
@@ -52,6 +51,7 @@ body{
   color: #D6CDC7;
   font-weight: bold;
 font-size: 20px;
+line-height: 35px;
 line-height: 30px;
 text-decoration: none;
 margin-right: 20px;
@@ -97,15 +97,14 @@ line-height: 45px;
 .home-recipes-container{
 
   position: absolute;
-  top: 340px;
-  left:20%;
+  top: 350px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width:60%;
   
-}
 
+
+}
 .recipes-container{
   position: absolute;
   top: 480px;
@@ -154,7 +153,6 @@ line-height: 45px;
   border-radius: 3px;
   border: none;
   margin-left: 10px;
-  cursor: pointer;
   
 
 }
@@ -181,14 +179,14 @@ line-height: 45px;
 }
 
 .item{
-  width: 15%;
+  width: 12%;
   color: #D6CDC7;
   margin-left: 20px;
   margin-top: 120px;
   font-size: 1.2em;
 }
 
-.link-name{
+.category-name{
   text-decoration: none;
   color: #D6CDC7;
 }

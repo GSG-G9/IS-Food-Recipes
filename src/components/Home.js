@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import categoriesArray from '../categoriesArray';
 import { Route, Link, Redirect, Switch } from 'react-router-dom';
 import search from '../images/search.png'
@@ -45,7 +46,7 @@ class Home extends React.Component {
                       className="home-recipes-img"
                       src={item.strCategoryThumb}
                     />
-                    <p className="category-name">{item.strCategory}</p>
+                    <p className="category-name" >{item.strCategory}</p>
                   </div>
                 </Link>
               </li>
@@ -56,5 +57,7 @@ class Home extends React.Component {
     );
   }
 }
-
+Home.PropTypes = {
+  searchedRecipe: PropTypes.string
+}
 export default Home;
