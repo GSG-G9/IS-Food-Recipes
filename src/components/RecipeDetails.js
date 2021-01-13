@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import '../recipeDetails.css'
 
 
 class RecipeDetails extends React.Component {
@@ -35,31 +36,33 @@ class RecipeDetails extends React.Component {
             else{
         return(
         
-            <div className="home-recipes-container">
-                  <div>{RecipeInformation[0].strMeal}</div>
+            <div className="recipe-cont">
+              <div className="first-section">
+                  <div className="recipe-title">{RecipeInformation[0].strMeal}</div>
                   <img
-                     className="home-recipes-img"
+                     className="recipe-img"
                      src={RecipeInformation[0].strMealThumb}
                    />
-                  <div>Instructions <br/>{RecipeInformation[0].strInstructions}</div>
-                
-                  <ul className="home-page-container">
-          <div className="home-recipes-container">
+                   <p className="instructions">Instructions</p>
+                  <div className="recipe-instructions">{RecipeInformation[0].strInstructions}</div>
+                  </div>
+                  <div className="second-section">
+                    <p className="instructions" >Ingredients</p>
+                  <ul className="ingredient-list">
                   {
-           
                      Object.keys(RecipeInformation[0]).map(item=>(
                         // console.log("item"+item)
                         
                        (item.includes("strIngredient")&& RecipeInformation[0][item])?
                          
-                        <li className="item" key={item}>
-                        <div className="home-recipes-img-container">
-                        <Link className="link-name" to={`/ingredientMeals/${RecipeInformation[0][item]}`}>
+                        <li className="iingredient-item" key={item}>
+                        <div >
+                        <Link className="ingredient-name"  to={`/ingredientMeals/${RecipeInformation[0][item]}`}>
                           <img
-                            className="home-recipes-img"
+                            className="ingredient-item"
                             src={`https://www.themealdb.com/images/ingredients/${RecipeInformation[0][item]}.png`}
                           />
-                          <p>{RecipeInformation[0][item]}</p>
+                          <p className="ingredient-name">{RecipeInformation[0][item]}</p>
                           </Link>
                         </div>
                       </li>
@@ -68,9 +71,10 @@ class RecipeDetails extends React.Component {
                        
                      )) 
                   }
-                  </div>  
+                   
                   </ul>
-                  <button onClick={this.back}>Back to Recipes</button>
+                  </div>
+                  {/* <button onClick={this.back()}>Back to Recipes</button> */}
                   </div> 
           
         )

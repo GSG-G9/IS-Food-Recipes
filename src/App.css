@@ -40,14 +40,14 @@ body{
 
 .navbar{
   position: fixed;
+  z-index:1; 
   height: 70px;
   top: 0;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #050505
-  ;
+  background-color: #050505;
   width:100%
 }
 .nav_link {
