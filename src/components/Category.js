@@ -1,5 +1,5 @@
 import React from 'react';
-import background from '../images/backgroung2.jpg'
+
 
 class Category extends React.Component {
 
