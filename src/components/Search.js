@@ -34,9 +34,9 @@ class Search extends React.Component {
       } else{
           return (
             <div>
-              <div className="background-img-con">
+              {/* <div className="background-img-con">
                 <img  className="background-img" src={background}></img>
-             </div>
+             </div> */}
              <ul className="home-page-container">
              <div className="home-recipes-container">
                {searchResult.map((item) => (

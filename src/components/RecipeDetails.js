@@ -19,7 +19,7 @@ class RecipeDetails extends React.Component {
           })
           return this.state;
         })
-        .then((res)=>console.log(res.RecipeInformation))
+        .then((res)=>console.log("hiiiiiiii",res.RecipeInformation))
       }
     //   back=()=>{
     //       console.log("Hiiii",this.props.history)
