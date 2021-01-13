@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Signika', sans-serif;
 
 }
 body{
@@ -39,14 +40,14 @@ body{
 
 .navbar{
   position: fixed;
+  z-index:1; 
   height: 70px;
   top: 0;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #050505
-  ;
+  background-color: #050505;
   width:100%
 }
 .nav_link {
@@ -54,6 +55,11 @@ body{
   font-weight: bold;
 font-size: 20px;
 line-height: 35px;
+text-decoration: none;
+}
+.nav_item :hover{
+  color: #8b8481;
+
 }
 .nav_item{
   float: right;
@@ -91,14 +97,15 @@ line-height: 64px;
 .home-recipes-container{
 
   position: absolute;
-  top: 350px;
+  top: 340px;
+  left:20%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  width:60%;
   
-
-
 }
+
 .recipes-container{
   position: absolute;
   top: 480px;
@@ -124,7 +131,7 @@ line-height: 64px;
 
   width: 50%;
   position: absolute;
-  top:200px;
+  top:100px;
   left: 50%;
   display: flex;
   justify-content: center;
@@ -147,6 +154,7 @@ line-height: 64px;
   border-radius: 3px;
   border: none;
   margin-left: 10px;
+  cursor: pointer;
   
 
 }
@@ -155,15 +163,24 @@ line-height: 64px;
  width: 90%;
  
 }
+
+.category-heading{
+  position: absolute;
+  top: 20%;
+  left: 70%;
+  color: #D6CDC7;
+
+}
+
 .item{
-  width: 12%;
+  width: 15%;
   color: #D6CDC7;
   margin-left: 20px;
   margin-top: 120px;
   font-size: 1.2em;
 }
 
-.category-name{
+.link-name{
   text-decoration: none;
   color: #D6CDC7;
 }
@@ -193,6 +210,35 @@ line-height: 64px;
 ul {
   list-style-type: none;
 }
+
+.not-found{
+  position: absolute;
+  top:300px;
+  left: 40%;
+  width: 20vw;
+  height: 20vh;
+  color: rgb(221, 221, 204);
+
+}
+
+.not-found-img{
+  width: 300px;
+  height: 300px;
+}
+
+.about-container{
+
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top: 400px;
+  color: #D6CDC7;
+
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
