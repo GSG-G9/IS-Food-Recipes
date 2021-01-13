@@ -56,7 +56,7 @@ class RecipeDetails extends React.Component {
                         
                        (item.includes("strIngredient")&& RecipeInformation[0][item])?
                          
-                        <li className="iingredient-item" key={item}>
+                        <li className="ingredient-item" key={item}>
                         <div >
                         <Link className="ingredient-name"  to={`/ingredientMeals/${RecipeInformation[0][item]}`}>
                           <img
