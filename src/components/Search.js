@@ -8,6 +8,7 @@ class Search extends React.Component {
   isLoaded : true,
   searchResult : [],
   searchedRecipe : "",
+  error: null
   }
   
   componentDidMount(){
@@ -20,18 +21,27 @@ class Search extends React.Component {
         searchResult : res.meals,
         isLoaded : false
       })
-      return this.state;
-    })
-    .then((res)=>console.log(res.searchResult))
-  }
+    },
+      (error) => {
+        this.setState({
+          isLoaded:false,
+          error
+        })
+      }
+    )
+  } 
+     
 
   
  
   
   render(){
     const searchedRecipe = this.props.location.search.split('=')[1];
-    const {searchResult, isLoaded} = this.state;
-    if(isLoaded){
+    const {searchResult, isLoaded, error} = this.state;
+    if(error){
+      return <h1 className="failed">{error.message}</h1>
+    }
+    else if(isLoaded){
       return(
         <div className="loading-img">
       </div> 

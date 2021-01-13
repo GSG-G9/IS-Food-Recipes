@@ -7,6 +7,7 @@ class IngredientMeals extends React.Component {
     state = {
     isLoaded : true,
     allMeals : [],
+    error:null
     }
     componentDidMount(){
         const {ingredientName}=this.props.match.params;
@@ -18,16 +19,23 @@ class IngredientMeals extends React.Component {
             allMeals : res.meals,
             isLoaded : false
           })
-          return this.state;
-        })
-        .then((res)=>console.log(res.allMeals))
-      }
+        },
+         (error) => {
+           this.setState({
+             isLoaded:false,
+             error
+           })
+          }
+        )
+    }
 
     render(){
-        const {allMeals, isLoaded} = this.state;
+        const {allMeals, isLoaded, error} = this.state;
         const {ingredientName}=this.props.match.params;
-       
-        if(isLoaded){
+        if(error){
+          return <h1 className="failed">{error.message}</h1>
+        }
+        else if(isLoaded){
           return(
             <div className="loading-img">
           </div> 

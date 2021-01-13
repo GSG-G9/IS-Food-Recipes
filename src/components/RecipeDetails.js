@@ -8,6 +8,8 @@ class RecipeDetails extends React.Component {
     state = {
     isLoaded : true,
     RecipeInformation : [],
+    error:null
+    
     }
     componentDidMount(){
         const {recipeId}=this.props.match.params;
@@ -19,15 +21,23 @@ class RecipeDetails extends React.Component {
             RecipeInformation : res.meals,
             isLoaded : false
           })
-          return this.state;
-        })
-        .then((res)=>console.log("hiiiiiiii",res.RecipeInformation))
-      }
+        },
+        (error) => {
+          this.setState({
+            isLoaded:false,
+            error
+          })
+         }
+        )
+    }
 
     render(){
             const {goBack} = this.props.history
-            const {RecipeInformation, isLoaded} = this.state;
-            if(isLoaded){
+            const {RecipeInformation, isLoaded, error} = this.state;
+            if(error){
+              return <h1 className="failed">{error.message}</h1>
+            }
+            else if(isLoaded){
               return(
                 <div className="loading-img">
               </div> 
@@ -53,7 +63,6 @@ class RecipeDetails extends React.Component {
                   <ul className="ingredient-list">
                   {
                      Object.keys(RecipeInformation[0]).map(item=>(
-                        // console.log("item"+item)
                         
                        (item.includes("strIngredient")&& RecipeInformation[0][item])?
                          

@@ -10,6 +10,7 @@ class Category extends React.Component {
     isLoaded : true,
     categoryResult : [],
     trackScrolling:false,
+    error: null,
     searchedRecipe : "",
     }
     
@@ -27,29 +28,34 @@ class Category extends React.Component {
       const {category} = this.props.match.params;
       let url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
       fetch(url)
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          categoryResult : res.meals,
-          isLoaded : false
-        })
-        return this.state;
-      })
-      .then((res)=>console.log(res.categoryResult))
-
-      
+       .then((res) => res.json())
+       .then((res) => {
+         this.setState({
+           categoryResult : res.meals,
+           isLoaded : false,
+         })
+        },
+       (error) => {
+         this.setState({
+           isLoaded:false,
+           error
+         })
+        }
+      )
     }
     
     render(){
       const {category} = this.props.match.params;
-      const {categoryResult, isLoaded} = this.state;
-      if(isLoaded){
+      const {categoryResult, isLoaded, error} = this.state;
+      if(error){
+        return <h1 className="failed">{error.message}</h1>
+      }
+      else if(isLoaded){
         return(
           <div className="loading-img">
         </div> 
         )
       }
-    
       else {
         if(!categoryResult){
           return <h1 className="no-result">There is no recipes for the entered search </h1>
