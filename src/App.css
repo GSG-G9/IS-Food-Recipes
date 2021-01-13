@@ -216,8 +216,6 @@ line-height: 45px;
 ul {
   list-style-type: none;
 }
-<<<<<<< HEAD
-=======
 
 .not-found{
   position: absolute;
@@ -267,7 +265,6 @@ ul {
 }
 
 
->>>>>>> main
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
